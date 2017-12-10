@@ -1,0 +1,37 @@
+Untuk masuk ke environment :
+1. ke direktori paling luar myfirst
+2. lalu ketik source bin/activate
+
+untuk mulai harus migrate
+
+setiap models di ubah harus migrate
+1. --> python manage.py makemigrations namafolder
+2. --> python manage.py sqlmigrate namafolder kode_dari_hasil_migration
+3. --> python manage.py migrate
+namafolder -> nama folder apps nya
+
+mengisi database
+1. python manage.py shell
+2. from music.models import Album,Song //album = tabel
+3. a = Album()
+4. a.artist = "Super Junior"
+5. a.save()
+
+mengisi database untuk Song(yg pake foreignkey)
+1. sama seperti diatas 1-2
+2. album1 = Album.objects.get(pk=1) #menginisialisasi pk nya 1
+3. album1.song_set.all() #menampilkan isi album1 di shell
+4. album1.song_set.create(song_title='too late', file_type='mp3')  #(isi) adlah field nya yang diisi
+// album1.song_set.count() #menampilkan jumlah isi dari shell
+
+Buat tampilin database = tabel.objects.all()
+Filter  =   Album.objects.filter(id=1)
+
+url (r'^$'), 
+^  --> begining
+$  --> end
+
+
+superuser :
+admin / admin@digimon.com
+pw : admin12345678
