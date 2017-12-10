@@ -1,0 +1,54 @@
+{% extends 'music/base.html' %} <!-- inculde base.html yang menjadi templete nya --> 
+
+{% block title %}Wonnie{% endblock %} <!-- Untuk title -->
+
+{% block body %}    <!-- Untuk manggil template dari base.html -->
+
+
+                {% if song.it_favorite  %}
+                    <img src="http://i.imgur.com/b9b13Rd.png"/>
+                {% endif %}
+
+<!-- Container (Album Section) -->
+<div class="container">
+    <div class="container-fluid text-center">
+        <img src="{{ album.album_logo.url  }}" style="width: 250px;">
+            <h1>{{ album.album_title }}</h1>
+            <h3>{{ album.artist }}</h3>
+        <br> 
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr align:center;>
+                        <th>Title</th>
+                        <th>Audio File</th>
+                        <th>Favorite</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                {% for song in album.song_set.all %}
+                <tbody>
+                    <tr>
+                        <td>{{ song.song_title }}</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}
+
+<!--
+Cara kerja favorite
+
+1. dari sini, link ke music\urls
+2. lalu lihat link url nya bagian favorite akan di link atau informasi akan di pastekan ke music/views.favorite(<-class)
+3. lihat bagian else di views.py itu adalah operasi untuk db nya, memodifikasi lalu di save.
+
+-->
+
+

@@ -1,0 +1,27 @@
+body{
+    background: white url("images/background.jpg");
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: grey;
+}
+
+.navbar {
+    border-radius: 0;
+    font: 12px Montserrat, sans-serif;
+    line-height: 1;
+}
+
+.navbar-brand{
+    font-family: 'Satisfy', cursive;
+}
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+
+#font {
+    font: 12px Montserrat, sans-serif;
+}
+
